@@ -37,7 +37,7 @@ Route::post('logout',[SessionController::class,'destroy'])->middleware('auth');
 Route::get('login',[SessionController::class,'create'])->middleware('guest');
 Route::post('login',[SessionController::class,'store'])->middleware('guest');
 
-// testing 1
+// testing 1,2
 
 
 
@@ -60,5 +60,5 @@ Route::get('authors/{author:username}', function(User $author){
     'posts' => $author->posts->load(['category','author']),
     'categories'=> Category::all()
   ]);
-});
-*/
+}/*
+
