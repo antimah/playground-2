@@ -40,7 +40,7 @@ Route::post('login',[SessionController::class,'store'])->middleware('guest');
 
 
 
-//testing testing testing testing
+//testing testing testing testing testing testing 
   // cache()-remember("posts.{$slug}", 15, function() use ($path){
   // use caching for faster loading.
 
