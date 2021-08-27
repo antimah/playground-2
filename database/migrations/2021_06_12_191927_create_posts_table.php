@@ -17,7 +17,8 @@ class CreatePostsTable extends Migration
             $table->id()->unique();
             $table->foreignId('user_id');
             $table->foreignId('category_id');
-            $table->string('title')->unique();// this is not commited
+            $table->string('title')->unique();
+            $table->string('thumbnail')->nullable();
             $table->text('excerpt');
             $table->text('body');
             $table->timestamp('published')->nullable();

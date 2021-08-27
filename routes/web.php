@@ -30,7 +30,7 @@ Route::post('/posts',[PostController::class,'store'])->middleware('auth');
 
 
 
-Route::get('register',[RegisterController::class,'create'])->middleware('guest');
+Route::get('register',[RegisterController::class,'create'])->middleware('guest'); 
 Route::post('register',[RegisterController::class,'store'])->middleware('guest');
 
 Route::post('logout',[SessionController::class,'destroy'])->middleware('auth');
@@ -40,7 +40,7 @@ Route::post('login',[SessionController::class,'store'])->middleware('guest');
 
 
 
-//.... 123 123 123 
+
   // cache()-remember("posts.{$slug}", 15, function() use ($path){
   // use caching for faster loading.
 
@@ -60,4 +60,5 @@ Route::get('authors/{author:username}', function(User $author){
     'posts' => $author->posts->load(['category','author']),
     'categories'=> Category::all()
   ]);
-}/*
+});
+*/

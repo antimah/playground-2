@@ -29,16 +29,18 @@
                         @csrf
                         <button typ="submit">Logout</button>
                     </form>
+
+                    <a href="/post/create"
+                        class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
+                        Publish
+                    </a>
                 @else
                     <a href="/register" class="text-xs font-bold uppercase">Register</a>
-                    <a href="/login" class="ml-6 text-xs font-bold uppercase">Login</a>
+                    <a href="/login" class="ml-6 text-xs font-bold uppercase mr-10">Login</a>
                 @endauth
 
 
-                <a href="/post/create"
-                    class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
-                    Publish
-                </a>
+
             </div>
         </nav>
 
@@ -47,10 +49,10 @@
 
         <footer class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
             <img src="./images/lary-newsletter-icon.svg" alt="" class="mx-auto -mb-6" style="width: 145px;">
-            <h5 class="text-3xl">Stay in touch with the latest posts</h5>
-            <p class="text-sm mt-3">Promise to keep the inbox clean. No bugs.</p>
+            <h5 class="text-3xl">Stay in touch</h5>
+            <p class="text-sm mt-3">E-mail: kamber@gmx.com </p>
 
-            <div class="mt-10">
+            {{-- <div class="mt-10">
                 <div class="relative inline-block mx-auto lg:bg-gray-200 rounded-full">
 
                     <form method="" action="#" class="lg:flex text-sm" id="newsletter">
@@ -69,7 +71,7 @@
                         </button>
                     </form>
                 </div>
-            </div>
+            </div> --}}
         </footer>
     </section>
     @if (session()->has('success'))

@@ -40,17 +40,19 @@ class PostController extends Controller
     }
 
     public function store(){
-
-
+        
+        
         $attributes = request()->validate([
             'title'=>['required',Rule::unique('posts','title')],
             'excerpt'=>['required'],
+            'thumbnail'=>['required','image'],
             'body'=>['required'],
             'category_id'=>['required',Rule::exists('categories','id')],
         ]);
 
         $attributes['user_id'] = auth()->id();
-
+        $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
+        
         Post::create($attributes);
 
         return redirect('/'); //or redirect to the newly created post. 
